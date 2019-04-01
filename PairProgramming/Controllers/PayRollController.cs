@@ -14,6 +14,13 @@ namespace PairProgramming.Controllers
 										   // GET: PayRoll
 		public ActionResult Index()
         {
+			List<PayRoll> payRolls = PayRollList();
+			double sum = 0;
+			foreach(var p in payRolls)
+			{
+				sum += p.TotalPay;
+			}
+			ViewBag.Message = $"{sum:c}";
             return View(PayRollList());
         }
 		public PayRollController()
@@ -28,7 +35,7 @@ namespace PairProgramming.Controllers
 				payRolls.Add(new PayRoll { EmployeeID = employee.EmployeeID,
 										   Employee_Name = employee.Employee_Name,
 										   Hours_Worked = employee.Hours_Worked,
-										   Pay_Rate = employee.Pay_Rate									   
+										   Pay_Rate = employee.Pay_Rate
 										   
 				});
 			}

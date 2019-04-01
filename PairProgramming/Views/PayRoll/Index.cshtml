@@ -4,10 +4,13 @@
   ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>Pay Roll</h2>
 <div>
   <table class="table">
     <tr>
+      <th>
+        @Html.DisplayNameFor(model => model.EmployeeID)
+      </th>
       <th>
         @Html.DisplayNameFor(model => model.Employee_Name)
       </th>
@@ -27,6 +30,45 @@
         @Html.DisplayNameFor(model => model.TotalPay)
       </th>
     </tr>
-</table>
+    @foreach (var item in Model)
+    {
+      <tr>
+        <td>
+          @Html.DisplayFor(modelItem => item.EmployeeID)
+        </td>
+        <td>
+          @Html.DisplayFor(modelItem => item.Employee_Name)
+        </td>
+        <td>
+          @Html.DisplayFor(modelItem => item.Pay_Rate)
+        </td>
+        <td>
+          @Html.DisplayFor(modelItem => item.Hours_Worked)
+        </td>
+        <td>
+          @Html.DisplayFor(modelItem => item.StandardPay)
+        </td>
+        <td>
+          @Html.DisplayFor(modelItem => item.OvertimePay)
+        </td>
+        <td>
+          @Html.DisplayFor(modelItem => item.TotalPay)
+        </td>
+      </tr>
+    }
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>
+        <strong>Total Pay Roll:</strong>
+      </td>
+      <td>
+        @ViewBag.Message
+      </td>
+    </tr>
+  </table>
 </div>
 
