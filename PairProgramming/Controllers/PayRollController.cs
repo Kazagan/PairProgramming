@@ -20,6 +20,7 @@ namespace PairProgramming.Controllers
 			{
 				sum += p.TotalPay;
 			}
+			payRolls.Sum(x=>x.TotalPay);
 			ViewBag.Message = $"{sum:c}";
             return View(PayRollList());
         }

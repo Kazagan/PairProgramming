@@ -11,12 +11,17 @@ namespace PairProgramming.Models
 {
     using System;
     using System.Collections.Generic;
-    
-    public partial class Employee
+	using System.ComponentModel.DataAnnotations;
+
+	public partial class Employee
     {
-        public int EmployeeID { get; set; }
-        public string Employee_Name { get; set; }
-        public decimal Pay_Rate { get; set; }
-        public double Hours_Worked { get; set; }
+		[Display(Name = "Employee ID")]
+		public int EmployeeID { get; set; }
+		[Display(Name = "Employee Name")]
+		public string Employee_Name { get; set; }
+		[Display(Name = "Pay Rate")]
+		public decimal Pay_Rate { get; set; }
+		[Display(Name = "Hours Worked")]
+		public double Hours_Worked { get; set; }
     }
 }

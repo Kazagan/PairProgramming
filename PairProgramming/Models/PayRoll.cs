@@ -8,6 +8,7 @@ namespace PairProgramming.Models
 {
 	public class PayRoll : Employee
 	{
+		[Display(Name = "Standard Pay")]
 		[DisplayFormat(ApplyFormatInEditMode = true, DataFormatString ="{0:c}")]
 		public double StandardPay
 		{
@@ -25,6 +26,7 @@ namespace PairProgramming.Models
 				}
 			}
 		}
+		[Display(Name = "Overtime Pay")]
 		[DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:c}")]
 		public double OvertimePay
 		{
@@ -39,6 +41,7 @@ namespace PairProgramming.Models
 				else return 0;
 			}
 		}
+		[Display(Name = "Total Pay")]
 		[DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:c}")]
 		public double TotalPay
 		{
